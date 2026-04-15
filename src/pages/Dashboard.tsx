@@ -347,7 +347,7 @@ const Dashboard = () => {
             {tools.map((t) => (
               <button
                 key={t.label}
-                onClick={() => navigate(t.path)}
+                onClick={() => navigate({ to: t.path as any })}
                 className="flex flex-col items-center gap-2 p-3 rounded-xl border border-transparent hover:border-border transition-all group hover:bg-secondary/60"
               >
                 <div className={cn("w-9 h-9 rounded-xl flex items-center justify-center transition-all", t.color, `group-hover:${t.hover.replace("hover:","")}`)}>
