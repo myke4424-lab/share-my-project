@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import AccountSelector, { SelectorAccount } from "@/components/dashboard/AccountSelector";
 import ParsedResultSelector from "@/components/dashboard/ParsedResultSelector";
 
-import { Link } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 
 interface LogLine {
   time: string;
@@ -244,7 +244,7 @@ const StoryTagger = () => {
             <div className="space-y-3">
               <div className="space-y-1">
                 <label className="text-xs text-muted-foreground flex items-center gap-1">
-                  <Link className="h-3 w-3" /> Ссылка на историю (t.me/...)
+                  <LinkIcon className="h-3 w-3" /> Ссылка на историю (t.me/...)
                 </label>
                 <Input
                   placeholder="https://t.me/c/123456/789"
