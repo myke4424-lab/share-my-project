@@ -124,7 +124,7 @@ const Chatting = () => {
     if (taskId && running && !esRef.current) {
       const es = new EventSource(`/api/tasks/${taskId}/logs`);
       esRef.current = es;
-      es.onmessage = e => { if (e.data) addLog(e.data, true); };
+      es.onmessage = e => { if (e.data) addLog(e.data); };
       es.addEventListener("done", () => { es.close(); esRef.current = null; setRunning(false); });
       es.onerror = () => { es.close(); esRef.current = null; setRunning(false); };
     }
