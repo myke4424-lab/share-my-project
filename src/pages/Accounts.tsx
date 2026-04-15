@@ -769,7 +769,7 @@ const Accounts = () => {
       </AlertDialog>
 
       <ImportAccountsModal open={importOpen} onOpenChange={setImportOpen} onImported={fetchAccounts} />
-      <ProxyPoolModal open={proxyPoolOpen} onOpenChange={(v) => { setProxyPoolOpen(v); if (!v) setProxyPoolAddMode(false); }} initialShowAdd={proxyPoolAddMode} />
+      <ProxyPoolModal open={proxyPoolOpen} onOpenChange={(v: string) => { setProxyPoolOpen(v); if (!v) setProxyPoolAddMode(false); }} initialShowAdd={proxyPoolAddMode} />
       <ConverterModal open={converterOpen} onOpenChange={setConverterOpen} onImported={fetchAccounts} />
       <AccountManagementSheet open={managementOpen} onOpenChange={setManagementOpen} account={managedAccount} onSaved={fetchAccounts} />
     </div>

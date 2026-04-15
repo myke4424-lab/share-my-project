@@ -357,7 +357,7 @@ const StoryTagger = () => {
           </div>
           <ParsedResultSelector
             importEndpoint="/api/tools/story_tagger/import-from-library"
-            onImported={(count) => {
+            onImported={(count: number) => {
               setAudienceCount(count);
               toast({ title: `Загружено ${count} пользователей из библиотеки` });
             }}

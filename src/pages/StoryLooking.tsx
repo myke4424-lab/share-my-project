@@ -313,7 +313,7 @@ const StoryLooking = () => {
           {sourceTab === "parsed" && (
             <ParsedResultSelector
               importEndpoint="/api/tools/masslooking/import-from-library"
-              onImported={(count) => {
+              onImported={(count: number) => {
                 setTargetsCount(count);
                 toast({ title: `Загружено ${count} целей из библиотеки` });
               }}
