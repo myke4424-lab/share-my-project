@@ -4,13 +4,18 @@ interface ToastOptions {
   title?: string;
   description?: string;
   variant?: "default" | "destructive";
+  duration?: number;
 }
 
 function toast(opts: ToastOptions) {
+  const options: { description?: string; duration?: number } = {};
+  if (opts.description) options.description = opts.description;
+  if (opts.duration) options.duration = opts.duration;
+  
   if (opts.variant === "destructive") {
-    sonnerToast.error(opts.title, { description: opts.description });
+    sonnerToast.error(opts.title, options);
   } else {
-    sonnerToast(opts.title, { description: opts.description });
+    sonnerToast(opts.title, options);
   }
 }
 
