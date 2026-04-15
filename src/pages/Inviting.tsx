@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { useRunningTask } from "@/hooks/useRunningTask";
-import ToolHeader from "@/components/ToolHeader";
+import ToolHeader from "@/components/dashboard/ToolHeader";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import AccountSelector from "@/components/AccountSelector";
+import AccountSelector from "@/components/dashboard/AccountSelector";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
@@ -22,8 +22,8 @@ import {
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
-import ParsedResultSelector from "@/components/ParsedResultSelector";
-import AiProtectionPanel from "@/components/AiProtectionPanel";
+import ParsedResultSelector from "@/components/dashboard/ParsedResultSelector";
+import AiProtectionPanel from "@/components/dashboard/AiProtectionPanel";
 
 import { useNavigate } from "@tanstack/react-router";
 

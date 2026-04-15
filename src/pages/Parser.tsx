@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import AccountSelector, { SelectorAccount } from "@/components/AccountSelector";
+import AccountSelector, { SelectorAccount } from "@/components/dashboard/AccountSelector";
 import { BookOpen, Trash2 } from "lucide-react";
 
 interface LibEntry { id: string; channel: string; mode: string; date: string; count: number; }

@@ -9,11 +9,11 @@ import {
   Eye, Search, ChevronDown, ChevronRight, X, Upload,
   Download, Clock, Users, BarChart3, Play, Square, RefreshCw, AlertCircle,
 } from "lucide-react";
-import ToolHeader from "@/components/ToolHeader";
+import ToolHeader from "@/components/dashboard/ToolHeader";
 import { cn } from "@/lib/utils";
-import AccountSelector, { SelectorAccount } from "@/components/AccountSelector";
+import AccountSelector, { SelectorAccount } from "@/components/dashboard/AccountSelector";
 import { useToast } from "@/hooks/use-toast";
-import ParsedResultSelector from "@/components/ParsedResultSelector";
+import ParsedResultSelector from "@/components/dashboard/ParsedResultSelector";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 

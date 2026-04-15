@@ -13,7 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import AccountSelector, { SelectorAccount } from "@/components/AccountSelector";
+import AccountSelector, { SelectorAccount } from "@/components/dashboard/AccountSelector";
 
 const systemPrompts = [
   { id: 1, name: "Дружелюбный собеседник", selected: true, content: "Ты дружелюбный собеседник. Общайся тепло и непринуждённо, задавай уточняющие вопросы, проявляй искренний интерес к собеседнику. Используй неформальный стиль, без канцелярита." },

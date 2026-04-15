@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
-import AccountSelector, { SelectorAccount } from "@/components/AccountSelector";
+import AccountSelector, { SelectorAccount } from "@/components/dashboard/AccountSelector";
 
 const allEmojis = ["👍", "❤️", "🔥", "😂", "🤔", "👊", "🙏", "🎉", "💯", "😍", "🤝", "👎"];
 

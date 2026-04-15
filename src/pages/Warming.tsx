@@ -7,13 +7,13 @@ import {
   MessageSquare, Clock, Info, ChevronLeft, ChevronRight,
   ShieldCheck,
 } from "lucide-react";
-import AccountSelector, { SelectorAccount } from "@/components/AccountSelector";
+import AccountSelector, { SelectorAccount } from "@/components/dashboard/AccountSelector";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import ToolHeader from "@/components/ToolHeader";
+import ToolHeader from "@/components/dashboard/ToolHeader";
 import { useRunningTask } from "@/hooks/useRunningTask";
 
 // ─── Types ───────────────────────────────────────────────────

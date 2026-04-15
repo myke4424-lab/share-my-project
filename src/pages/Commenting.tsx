@@ -5,14 +5,14 @@ import {
   X, Plus, Shield, Inbox, Download, ChevronsRight, ChevronsLeft,
   ChevronLeft, Check, Star, Eye, Pencil, Trash2, Hash, MessageSquare, Square, Copy,
 } from "lucide-react";
-import ToolHeader from "@/components/ToolHeader";
+import ToolHeader from "@/components/dashboard/ToolHeader";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import AccountSelector, { SelectorAccount } from "@/components/AccountSelector";
+import AccountSelector, { SelectorAccount } from "@/components/dashboard/AccountSelector";
 
 // ── Data ──────────────────────────────────────────────────────
 

@@ -16,10 +16,10 @@ import {
   AlertDialogContent, AlertDialogDescription, AlertDialogFooter,
   AlertDialogHeader, AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import ImportAccountsModal from "@/components/ImportAccountsModal";
-import AccountManagementSheet from "@/components/AccountManagementSheet";
-import ProxyPoolModal from "@/components/ProxyPoolModal";
-import ConverterModal from "@/components/ConverterModal";
+import ImportAccountsModal from "@/components/dashboard/ImportAccountsModal";
+import AccountManagementSheet from "@/components/dashboard/AccountManagementSheet";
+import ProxyPoolModal from "@/components/dashboard/ProxyPoolModal";
+import ConverterModal from "@/components/dashboard/ConverterModal";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 

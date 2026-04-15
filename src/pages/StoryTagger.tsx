@@ -7,11 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Camera, Upload, Clock, Users, Play, Square, Link } from "lucide-react";
-import ToolHeader from "@/components/ToolHeader";
+import ToolHeader from "@/components/dashboard/ToolHeader";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-import AccountSelector, { SelectorAccount } from "@/components/AccountSelector";
-import ParsedResultSelector from "@/components/ParsedResultSelector";
+import AccountSelector, { SelectorAccount } from "@/components/dashboard/AccountSelector";
+import ParsedResultSelector from "@/components/dashboard/ParsedResultSelector";
 
 import { Link } from "@tanstack/react-router";
 
