@@ -9,38 +9,325 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PaymentRouteImport } from './routes/payment'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardWarmingRouteImport } from './routes/_dashboard.warming'
+import { Route as DashboardTasksRouteImport } from './routes/_dashboard.tasks'
+import { Route as DashboardSubscriptionRouteImport } from './routes/_dashboard.subscription'
+import { Route as DashboardStorytaggerRouteImport } from './routes/_dashboard.storytagger'
+import { Route as DashboardStorylookingRouteImport } from './routes/_dashboard.storylooking'
+import { Route as DashboardSettingsRouteImport } from './routes/_dashboard.settings'
+import { Route as DashboardScheduleRouteImport } from './routes/_dashboard.schedule'
+import { Route as DashboardReferralRouteImport } from './routes/_dashboard.referral'
+import { Route as DashboardReactionsRouteImport } from './routes/_dashboard.reactions'
+import { Route as DashboardProxiesRouteImport } from './routes/_dashboard.proxies'
+import { Route as DashboardParsingRouteImport } from './routes/_dashboard.parsing'
+import { Route as DashboardNotificationsRouteImport } from './routes/_dashboard.notifications'
+import { Route as DashboardInvitingRouteImport } from './routes/_dashboard.inviting'
+import { Route as DashboardDashboardRouteImport } from './routes/_dashboard.dashboard'
+import { Route as DashboardCommentingRouteImport } from './routes/_dashboard.commenting'
+import { Route as DashboardChattingRouteImport } from './routes/_dashboard.chatting'
+import { Route as DashboardAdminRouteImport } from './routes/_dashboard.admin'
+import { Route as DashboardAccountsRouteImport } from './routes/_dashboard.accounts'
+import { Route as DashboardAdminBotRouteImport } from './routes/_dashboard.admin.bot'
 
+const PaymentRoute = PaymentRouteImport.update({
+  id: '/payment',
+  path: '/payment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/_dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardWarmingRoute = DashboardWarmingRouteImport.update({
+  id: '/warming',
+  path: '/warming',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardTasksRoute = DashboardTasksRouteImport.update({
+  id: '/tasks',
+  path: '/tasks',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardSubscriptionRoute = DashboardSubscriptionRouteImport.update({
+  id: '/subscription',
+  path: '/subscription',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardStorytaggerRoute = DashboardStorytaggerRouteImport.update({
+  id: '/storytagger',
+  path: '/storytagger',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardStorylookingRoute = DashboardStorylookingRouteImport.update({
+  id: '/storylooking',
+  path: '/storylooking',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardScheduleRoute = DashboardScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardReferralRoute = DashboardReferralRouteImport.update({
+  id: '/referral',
+  path: '/referral',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardReactionsRoute = DashboardReactionsRouteImport.update({
+  id: '/reactions',
+  path: '/reactions',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardProxiesRoute = DashboardProxiesRouteImport.update({
+  id: '/proxies',
+  path: '/proxies',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardParsingRoute = DashboardParsingRouteImport.update({
+  id: '/parsing',
+  path: '/parsing',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardNotificationsRoute = DashboardNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardInvitingRoute = DashboardInvitingRouteImport.update({
+  id: '/inviting',
+  path: '/inviting',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDashboardRoute = DashboardDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardCommentingRoute = DashboardCommentingRouteImport.update({
+  id: '/commenting',
+  path: '/commenting',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardChattingRoute = DashboardChattingRouteImport.update({
+  id: '/chatting',
+  path: '/chatting',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAdminRoute = DashboardAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAccountsRoute = DashboardAccountsRouteImport.update({
+  id: '/accounts',
+  path: '/accounts',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAdminBotRoute = DashboardAdminBotRouteImport.update({
+  id: '/bot',
+  path: '/bot',
+  getParentRoute: () => DashboardAdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
+  '/payment': typeof PaymentRoute
+  '/accounts': typeof DashboardAccountsRoute
+  '/admin': typeof DashboardAdminRouteWithChildren
+  '/chatting': typeof DashboardChattingRoute
+  '/commenting': typeof DashboardCommentingRoute
+  '/dashboard': typeof DashboardDashboardRoute
+  '/inviting': typeof DashboardInvitingRoute
+  '/notifications': typeof DashboardNotificationsRoute
+  '/parsing': typeof DashboardParsingRoute
+  '/proxies': typeof DashboardProxiesRoute
+  '/reactions': typeof DashboardReactionsRoute
+  '/referral': typeof DashboardReferralRoute
+  '/schedule': typeof DashboardScheduleRoute
+  '/settings': typeof DashboardSettingsRoute
+  '/storylooking': typeof DashboardStorylookingRoute
+  '/storytagger': typeof DashboardStorytaggerRoute
+  '/subscription': typeof DashboardSubscriptionRoute
+  '/tasks': typeof DashboardTasksRoute
+  '/warming': typeof DashboardWarmingRoute
+  '/admin/bot': typeof DashboardAdminBotRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
+  '/payment': typeof PaymentRoute
+  '/accounts': typeof DashboardAccountsRoute
+  '/admin': typeof DashboardAdminRouteWithChildren
+  '/chatting': typeof DashboardChattingRoute
+  '/commenting': typeof DashboardCommentingRoute
+  '/dashboard': typeof DashboardDashboardRoute
+  '/inviting': typeof DashboardInvitingRoute
+  '/notifications': typeof DashboardNotificationsRoute
+  '/parsing': typeof DashboardParsingRoute
+  '/proxies': typeof DashboardProxiesRoute
+  '/reactions': typeof DashboardReactionsRoute
+  '/referral': typeof DashboardReferralRoute
+  '/schedule': typeof DashboardScheduleRoute
+  '/settings': typeof DashboardSettingsRoute
+  '/storylooking': typeof DashboardStorylookingRoute
+  '/storytagger': typeof DashboardStorytaggerRoute
+  '/subscription': typeof DashboardSubscriptionRoute
+  '/tasks': typeof DashboardTasksRoute
+  '/warming': typeof DashboardWarmingRoute
+  '/admin/bot': typeof DashboardAdminBotRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_dashboard': typeof DashboardRouteWithChildren
+  '/login': typeof LoginRoute
+  '/payment': typeof PaymentRoute
+  '/_dashboard/accounts': typeof DashboardAccountsRoute
+  '/_dashboard/admin': typeof DashboardAdminRouteWithChildren
+  '/_dashboard/chatting': typeof DashboardChattingRoute
+  '/_dashboard/commenting': typeof DashboardCommentingRoute
+  '/_dashboard/dashboard': typeof DashboardDashboardRoute
+  '/_dashboard/inviting': typeof DashboardInvitingRoute
+  '/_dashboard/notifications': typeof DashboardNotificationsRoute
+  '/_dashboard/parsing': typeof DashboardParsingRoute
+  '/_dashboard/proxies': typeof DashboardProxiesRoute
+  '/_dashboard/reactions': typeof DashboardReactionsRoute
+  '/_dashboard/referral': typeof DashboardReferralRoute
+  '/_dashboard/schedule': typeof DashboardScheduleRoute
+  '/_dashboard/settings': typeof DashboardSettingsRoute
+  '/_dashboard/storylooking': typeof DashboardStorylookingRoute
+  '/_dashboard/storytagger': typeof DashboardStorytaggerRoute
+  '/_dashboard/subscription': typeof DashboardSubscriptionRoute
+  '/_dashboard/tasks': typeof DashboardTasksRoute
+  '/_dashboard/warming': typeof DashboardWarmingRoute
+  '/_dashboard/admin/bot': typeof DashboardAdminBotRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/login'
+    | '/payment'
+    | '/accounts'
+    | '/admin'
+    | '/chatting'
+    | '/commenting'
+    | '/dashboard'
+    | '/inviting'
+    | '/notifications'
+    | '/parsing'
+    | '/proxies'
+    | '/reactions'
+    | '/referral'
+    | '/schedule'
+    | '/settings'
+    | '/storylooking'
+    | '/storytagger'
+    | '/subscription'
+    | '/tasks'
+    | '/warming'
+    | '/admin/bot'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/login'
+    | '/payment'
+    | '/accounts'
+    | '/admin'
+    | '/chatting'
+    | '/commenting'
+    | '/dashboard'
+    | '/inviting'
+    | '/notifications'
+    | '/parsing'
+    | '/proxies'
+    | '/reactions'
+    | '/referral'
+    | '/schedule'
+    | '/settings'
+    | '/storylooking'
+    | '/storytagger'
+    | '/subscription'
+    | '/tasks'
+    | '/warming'
+    | '/admin/bot'
+  id:
+    | '__root__'
+    | '/'
+    | '/_dashboard'
+    | '/login'
+    | '/payment'
+    | '/_dashboard/accounts'
+    | '/_dashboard/admin'
+    | '/_dashboard/chatting'
+    | '/_dashboard/commenting'
+    | '/_dashboard/dashboard'
+    | '/_dashboard/inviting'
+    | '/_dashboard/notifications'
+    | '/_dashboard/parsing'
+    | '/_dashboard/proxies'
+    | '/_dashboard/reactions'
+    | '/_dashboard/referral'
+    | '/_dashboard/schedule'
+    | '/_dashboard/settings'
+    | '/_dashboard/storylooking'
+    | '/_dashboard/storytagger'
+    | '/_dashboard/subscription'
+    | '/_dashboard/tasks'
+    | '/_dashboard/warming'
+    | '/_dashboard/admin/bot'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DashboardRoute: typeof DashboardRouteWithChildren
+  LoginRoute: typeof LoginRoute
+  PaymentRoute: typeof PaymentRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/payment': {
+      id: '/payment'
+      path: '/payment'
+      fullPath: '/payment'
+      preLoaderRoute: typeof PaymentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_dashboard': {
+      id: '/_dashboard'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +335,205 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_dashboard/warming': {
+      id: '/_dashboard/warming'
+      path: '/warming'
+      fullPath: '/warming'
+      preLoaderRoute: typeof DashboardWarmingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/tasks': {
+      id: '/_dashboard/tasks'
+      path: '/tasks'
+      fullPath: '/tasks'
+      preLoaderRoute: typeof DashboardTasksRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/subscription': {
+      id: '/_dashboard/subscription'
+      path: '/subscription'
+      fullPath: '/subscription'
+      preLoaderRoute: typeof DashboardSubscriptionRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/storytagger': {
+      id: '/_dashboard/storytagger'
+      path: '/storytagger'
+      fullPath: '/storytagger'
+      preLoaderRoute: typeof DashboardStorytaggerRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/storylooking': {
+      id: '/_dashboard/storylooking'
+      path: '/storylooking'
+      fullPath: '/storylooking'
+      preLoaderRoute: typeof DashboardStorylookingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/settings': {
+      id: '/_dashboard/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof DashboardSettingsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/schedule': {
+      id: '/_dashboard/schedule'
+      path: '/schedule'
+      fullPath: '/schedule'
+      preLoaderRoute: typeof DashboardScheduleRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/referral': {
+      id: '/_dashboard/referral'
+      path: '/referral'
+      fullPath: '/referral'
+      preLoaderRoute: typeof DashboardReferralRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/reactions': {
+      id: '/_dashboard/reactions'
+      path: '/reactions'
+      fullPath: '/reactions'
+      preLoaderRoute: typeof DashboardReactionsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/proxies': {
+      id: '/_dashboard/proxies'
+      path: '/proxies'
+      fullPath: '/proxies'
+      preLoaderRoute: typeof DashboardProxiesRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/parsing': {
+      id: '/_dashboard/parsing'
+      path: '/parsing'
+      fullPath: '/parsing'
+      preLoaderRoute: typeof DashboardParsingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/notifications': {
+      id: '/_dashboard/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof DashboardNotificationsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/inviting': {
+      id: '/_dashboard/inviting'
+      path: '/inviting'
+      fullPath: '/inviting'
+      preLoaderRoute: typeof DashboardInvitingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard': {
+      id: '/_dashboard/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardDashboardRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/commenting': {
+      id: '/_dashboard/commenting'
+      path: '/commenting'
+      fullPath: '/commenting'
+      preLoaderRoute: typeof DashboardCommentingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/chatting': {
+      id: '/_dashboard/chatting'
+      path: '/chatting'
+      fullPath: '/chatting'
+      preLoaderRoute: typeof DashboardChattingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/admin': {
+      id: '/_dashboard/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof DashboardAdminRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/accounts': {
+      id: '/_dashboard/accounts'
+      path: '/accounts'
+      fullPath: '/accounts'
+      preLoaderRoute: typeof DashboardAccountsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/admin/bot': {
+      id: '/_dashboard/admin/bot'
+      path: '/bot'
+      fullPath: '/admin/bot'
+      preLoaderRoute: typeof DashboardAdminBotRouteImport
+      parentRoute: typeof DashboardAdminRoute
+    }
   }
 }
 
+interface DashboardAdminRouteChildren {
+  DashboardAdminBotRoute: typeof DashboardAdminBotRoute
+}
+
+const DashboardAdminRouteChildren: DashboardAdminRouteChildren = {
+  DashboardAdminBotRoute: DashboardAdminBotRoute,
+}
+
+const DashboardAdminRouteWithChildren = DashboardAdminRoute._addFileChildren(
+  DashboardAdminRouteChildren,
+)
+
+interface DashboardRouteChildren {
+  DashboardAccountsRoute: typeof DashboardAccountsRoute
+  DashboardAdminRoute: typeof DashboardAdminRouteWithChildren
+  DashboardChattingRoute: typeof DashboardChattingRoute
+  DashboardCommentingRoute: typeof DashboardCommentingRoute
+  DashboardDashboardRoute: typeof DashboardDashboardRoute
+  DashboardInvitingRoute: typeof DashboardInvitingRoute
+  DashboardNotificationsRoute: typeof DashboardNotificationsRoute
+  DashboardParsingRoute: typeof DashboardParsingRoute
+  DashboardProxiesRoute: typeof DashboardProxiesRoute
+  DashboardReactionsRoute: typeof DashboardReactionsRoute
+  DashboardReferralRoute: typeof DashboardReferralRoute
+  DashboardScheduleRoute: typeof DashboardScheduleRoute
+  DashboardSettingsRoute: typeof DashboardSettingsRoute
+  DashboardStorylookingRoute: typeof DashboardStorylookingRoute
+  DashboardStorytaggerRoute: typeof DashboardStorytaggerRoute
+  DashboardSubscriptionRoute: typeof DashboardSubscriptionRoute
+  DashboardTasksRoute: typeof DashboardTasksRoute
+  DashboardWarmingRoute: typeof DashboardWarmingRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardAccountsRoute: DashboardAccountsRoute,
+  DashboardAdminRoute: DashboardAdminRouteWithChildren,
+  DashboardChattingRoute: DashboardChattingRoute,
+  DashboardCommentingRoute: DashboardCommentingRoute,
+  DashboardDashboardRoute: DashboardDashboardRoute,
+  DashboardInvitingRoute: DashboardInvitingRoute,
+  DashboardNotificationsRoute: DashboardNotificationsRoute,
+  DashboardParsingRoute: DashboardParsingRoute,
+  DashboardProxiesRoute: DashboardProxiesRoute,
+  DashboardReactionsRoute: DashboardReactionsRoute,
+  DashboardReferralRoute: DashboardReferralRoute,
+  DashboardScheduleRoute: DashboardScheduleRoute,
+  DashboardSettingsRoute: DashboardSettingsRoute,
+  DashboardStorylookingRoute: DashboardStorylookingRoute,
+  DashboardStorytaggerRoute: DashboardStorytaggerRoute,
+  DashboardSubscriptionRoute: DashboardSubscriptionRoute,
+  DashboardTasksRoute: DashboardTasksRoute,
+  DashboardWarmingRoute: DashboardWarmingRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DashboardRoute: DashboardRouteWithChildren,
+  LoginRoute: LoginRoute,
+  PaymentRoute: PaymentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
