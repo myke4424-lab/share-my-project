@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Camera, Upload, Clock, Users, Play, Square, Link } from "lucide-react";
+import { Camera, Upload, Clock, Users, Play, Square } from "lucide-react";
 import ToolHeader from "@/components/dashboard/ToolHeader";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";

@@ -70,6 +70,14 @@ const Reactions = () => {
   const [reactionChance, setReactionChance] = useState([50]);
   const [reactionsPerAccount, setReactionsPerAccount] = useState(1);
   const [reactionDelay, setReactionDelay] = useState([5]);
+  const reactionDelayMin = reactionDelay[0] ?? 5;
+  const reactionDelayMax = reactionDelay[0] ?? 5;
+  const [skipAlreadyReacted, setSkipAlreadyReacted] = useState(true);
+  const [postAgeMin, setPostAgeMin] = useState(0);
+  const [postAgeMax, setPostAgeMax] = useState(48);
+  const [usePaidReactions, setUsePaidReactions] = useState(false);
+  const [paidStars, setPaidStars] = useState(1);
+  const [paidPercent, setPaidPercent] = useState(10);
 
   useEffect(() => {
     fetch("/api/accounts", { credentials: "include" })
