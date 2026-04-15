@@ -58,7 +58,7 @@ const Login = () => {
         }
       } catch {}
     }
-    navigate({ to: "/dashboard" });
+    navigate({ to: "/dashboard" as any });
   };
 
   // Extract referral code from URL: ?ref=CODE or stored in localStorage
@@ -132,7 +132,7 @@ const Login = () => {
     const result = await loginWithEmail(email, password);
     setLoading(false);
     if (result.ok) {
-      navigate({ to: "/dashboard" }); return;
+      navigate({ to: "/dashboard" as any }); return;
     } else if (result.requires_2fa && result.tmp_token) {
       setRequires2fa(true);
       setTmpToken(result.tmp_token);
@@ -150,7 +150,7 @@ const Login = () => {
     setLoading(true);
     const result = await verify2fa(tmpToken, totpCode);
     setLoading(false);
-    if (result.ok) { navigate({ to: "/dashboard" }); return; }
+    if (result.ok) { navigate({ to: "/dashboard" as any }); return; }
     else setError(result.error || "Неверный код");
   };
 
@@ -220,7 +220,7 @@ const Login = () => {
                   }
                 } catch {}
                 setBotLinkLoading(false);
-                navigate({ to: "/dashboard" });
+                navigate({ to: "/dashboard" as any });
               }}
             >
               {botLinkLoading ? (
@@ -232,7 +232,7 @@ const Login = () => {
                 </>
               )}
             </Button>
-            <button onClick={() => navigate({ to: "/dashboard" })} className="mt-4 text-sm text-muted-foreground hover:text-foreground transition-colors block w-full text-center">
+            <button onClick={() => navigate({ to: "/dashboard" as any })} className="mt-4 text-sm text-muted-foreground hover:text-foreground transition-colors block w-full text-center">
               Перейти в панель управления →
             </button>
           </div>

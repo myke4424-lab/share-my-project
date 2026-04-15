@@ -120,7 +120,7 @@ const ToolHeader = ({
               variant="outline"
               size="sm"
               className="gap-1.5 h-9 text-xs text-muted-foreground border-border/60"
-              onClick={() => navigate({ to: "/tasks" })}
+              onClick={() => navigate({ to: "/tasks" as any })}
             >
               <Terminal className="h-3.5 w-3.5" />
               Логи задачи

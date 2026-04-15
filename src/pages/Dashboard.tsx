@@ -242,7 +242,7 @@ const Dashboard = () => {
           <p className="text-xs text-emerald-400 font-medium">
             {runningTasks.length} {runningTasks.length === 1 ? "задача выполняется" : "задачи выполняются"}: {runningTasks.map(t => TOOL_LABELS[t.tool] ?? t.tool).join(", ")}
           </p>
-          <button onClick={() => navigate({ to: "/notifications" })} className="ml-auto text-[10px] text-emerald-400/70 hover:text-emerald-400 flex items-center gap-1">
+          <button onClick={() => navigate({ to: "/notifications" as any })} className="ml-auto text-[10px] text-emerald-400/70 hover:text-emerald-400 flex items-center gap-1">
             Подробнее <ArrowRight className="h-3 w-3" />
           </button>
         </div>
@@ -290,7 +290,7 @@ const Dashboard = () => {
           return (
             <div
               className={cn("panel-card p-4 cursor-pointer transition-all col-span-1", PLAN_GLOW[sub.plan] ?? PLAN_GLOW.trial)}
-              onClick={() => navigate({ to: "/subscription" })}
+              onClick={() => navigate({ to: "/subscription" as any })}
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
@@ -427,7 +427,7 @@ const Dashboard = () => {
               </p>
             )}
           </div>
-          <Button variant="ghost" size="sm" onClick={() => navigate({ to: "/notifications" })}
+          <Button variant="ghost" size="sm" onClick={() => navigate({ to: "/notifications" as any })}
             className="text-primary hover:text-primary/80 gap-1 h-7 text-xs">
             Все задачи <ArrowRight className="h-3 w-3" />
           </Button>

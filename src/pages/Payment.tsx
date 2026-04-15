@@ -57,7 +57,7 @@ const PLAN_NAMES: Record<string, string> = {
 };
 
 export default function Payment() {
-  const [params] = useSearchParams();
+  const [params] = URLSearchParams();
   const navigate = useNavigate();
   const [selected, setSelected] = useState<string | null>(null);
   const [done, setDone] = useState(false);
@@ -85,7 +85,7 @@ export default function Payment() {
       {/* Top bar */}
       <header className="border-b border-border/50 px-4 sm:px-6 h-14 flex items-center gap-3">
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => window.history.back()}
           className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />

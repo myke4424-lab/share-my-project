@@ -16,14 +16,22 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardWarmingRouteImport } from './routes/_dashboard.warming'
 import { Route as DashboardTasksRouteImport } from './routes/_dashboard.tasks'
 import { Route as DashboardSubscriptionRouteImport } from './routes/_dashboard.subscription'
+import { Route as DashboardStorytaggerRouteImport } from './routes/_dashboard.storytagger'
+import { Route as DashboardStorylookingRouteImport } from './routes/_dashboard.storylooking'
 import { Route as DashboardSettingsRouteImport } from './routes/_dashboard.settings'
+import { Route as DashboardScheduleRouteImport } from './routes/_dashboard.schedule'
+import { Route as DashboardReferralRouteImport } from './routes/_dashboard.referral'
+import { Route as DashboardReactionsRouteImport } from './routes/_dashboard.reactions'
 import { Route as DashboardProxiesRouteImport } from './routes/_dashboard.proxies'
 import { Route as DashboardParsingRouteImport } from './routes/_dashboard.parsing'
 import { Route as DashboardNotificationsRouteImport } from './routes/_dashboard.notifications'
 import { Route as DashboardInvitingRouteImport } from './routes/_dashboard.inviting'
 import { Route as DashboardDashboardRouteImport } from './routes/_dashboard.dashboard'
 import { Route as DashboardCommentingRouteImport } from './routes/_dashboard.commenting'
+import { Route as DashboardChattingRouteImport } from './routes/_dashboard.chatting'
+import { Route as DashboardAdminRouteImport } from './routes/_dashboard.admin'
 import { Route as DashboardAccountsRouteImport } from './routes/_dashboard.accounts'
+import { Route as DashboardAdminBotRouteImport } from './routes/_dashboard.admin.bot'
 
 const PaymentRoute = PaymentRouteImport.update({
   id: '/payment',
@@ -59,9 +67,34 @@ const DashboardSubscriptionRoute = DashboardSubscriptionRouteImport.update({
   path: '/subscription',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardStorytaggerRoute = DashboardStorytaggerRouteImport.update({
+  id: '/storytagger',
+  path: '/storytagger',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardStorylookingRoute = DashboardStorylookingRouteImport.update({
+  id: '/storylooking',
+  path: '/storylooking',
+  getParentRoute: () => DashboardRoute,
+} as any)
 const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardScheduleRoute = DashboardScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardReferralRoute = DashboardReferralRouteImport.update({
+  id: '/referral',
+  path: '/referral',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardReactionsRoute = DashboardReactionsRouteImport.update({
+  id: '/reactions',
+  path: '/reactions',
   getParentRoute: () => DashboardRoute,
 } as any)
 const DashboardProxiesRoute = DashboardProxiesRouteImport.update({
@@ -94,10 +127,25 @@ const DashboardCommentingRoute = DashboardCommentingRouteImport.update({
   path: '/commenting',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardChattingRoute = DashboardChattingRouteImport.update({
+  id: '/chatting',
+  path: '/chatting',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAdminRoute = DashboardAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => DashboardRoute,
+} as any)
 const DashboardAccountsRoute = DashboardAccountsRouteImport.update({
   id: '/accounts',
   path: '/accounts',
   getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAdminBotRoute = DashboardAdminBotRouteImport.update({
+  id: '/bot',
+  path: '/bot',
+  getParentRoute: () => DashboardAdminRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -105,32 +153,48 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/payment': typeof PaymentRoute
   '/accounts': typeof DashboardAccountsRoute
+  '/admin': typeof DashboardAdminRouteWithChildren
+  '/chatting': typeof DashboardChattingRoute
   '/commenting': typeof DashboardCommentingRoute
   '/dashboard': typeof DashboardDashboardRoute
   '/inviting': typeof DashboardInvitingRoute
   '/notifications': typeof DashboardNotificationsRoute
   '/parsing': typeof DashboardParsingRoute
   '/proxies': typeof DashboardProxiesRoute
+  '/reactions': typeof DashboardReactionsRoute
+  '/referral': typeof DashboardReferralRoute
+  '/schedule': typeof DashboardScheduleRoute
   '/settings': typeof DashboardSettingsRoute
+  '/storylooking': typeof DashboardStorylookingRoute
+  '/storytagger': typeof DashboardStorytaggerRoute
   '/subscription': typeof DashboardSubscriptionRoute
   '/tasks': typeof DashboardTasksRoute
   '/warming': typeof DashboardWarmingRoute
+  '/admin/bot': typeof DashboardAdminBotRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
   '/payment': typeof PaymentRoute
   '/accounts': typeof DashboardAccountsRoute
+  '/admin': typeof DashboardAdminRouteWithChildren
+  '/chatting': typeof DashboardChattingRoute
   '/commenting': typeof DashboardCommentingRoute
   '/dashboard': typeof DashboardDashboardRoute
   '/inviting': typeof DashboardInvitingRoute
   '/notifications': typeof DashboardNotificationsRoute
   '/parsing': typeof DashboardParsingRoute
   '/proxies': typeof DashboardProxiesRoute
+  '/reactions': typeof DashboardReactionsRoute
+  '/referral': typeof DashboardReferralRoute
+  '/schedule': typeof DashboardScheduleRoute
   '/settings': typeof DashboardSettingsRoute
+  '/storylooking': typeof DashboardStorylookingRoute
+  '/storytagger': typeof DashboardStorytaggerRoute
   '/subscription': typeof DashboardSubscriptionRoute
   '/tasks': typeof DashboardTasksRoute
   '/warming': typeof DashboardWarmingRoute
+  '/admin/bot': typeof DashboardAdminBotRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -139,16 +203,24 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/payment': typeof PaymentRoute
   '/_dashboard/accounts': typeof DashboardAccountsRoute
+  '/_dashboard/admin': typeof DashboardAdminRouteWithChildren
+  '/_dashboard/chatting': typeof DashboardChattingRoute
   '/_dashboard/commenting': typeof DashboardCommentingRoute
   '/_dashboard/dashboard': typeof DashboardDashboardRoute
   '/_dashboard/inviting': typeof DashboardInvitingRoute
   '/_dashboard/notifications': typeof DashboardNotificationsRoute
   '/_dashboard/parsing': typeof DashboardParsingRoute
   '/_dashboard/proxies': typeof DashboardProxiesRoute
+  '/_dashboard/reactions': typeof DashboardReactionsRoute
+  '/_dashboard/referral': typeof DashboardReferralRoute
+  '/_dashboard/schedule': typeof DashboardScheduleRoute
   '/_dashboard/settings': typeof DashboardSettingsRoute
+  '/_dashboard/storylooking': typeof DashboardStorylookingRoute
+  '/_dashboard/storytagger': typeof DashboardStorytaggerRoute
   '/_dashboard/subscription': typeof DashboardSubscriptionRoute
   '/_dashboard/tasks': typeof DashboardTasksRoute
   '/_dashboard/warming': typeof DashboardWarmingRoute
+  '/_dashboard/admin/bot': typeof DashboardAdminBotRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -157,32 +229,48 @@ export interface FileRouteTypes {
     | '/login'
     | '/payment'
     | '/accounts'
+    | '/admin'
+    | '/chatting'
     | '/commenting'
     | '/dashboard'
     | '/inviting'
     | '/notifications'
     | '/parsing'
     | '/proxies'
+    | '/reactions'
+    | '/referral'
+    | '/schedule'
     | '/settings'
+    | '/storylooking'
+    | '/storytagger'
     | '/subscription'
     | '/tasks'
     | '/warming'
+    | '/admin/bot'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/login'
     | '/payment'
     | '/accounts'
+    | '/admin'
+    | '/chatting'
     | '/commenting'
     | '/dashboard'
     | '/inviting'
     | '/notifications'
     | '/parsing'
     | '/proxies'
+    | '/reactions'
+    | '/referral'
+    | '/schedule'
     | '/settings'
+    | '/storylooking'
+    | '/storytagger'
     | '/subscription'
     | '/tasks'
     | '/warming'
+    | '/admin/bot'
   id:
     | '__root__'
     | '/'
@@ -190,16 +278,24 @@ export interface FileRouteTypes {
     | '/login'
     | '/payment'
     | '/_dashboard/accounts'
+    | '/_dashboard/admin'
+    | '/_dashboard/chatting'
     | '/_dashboard/commenting'
     | '/_dashboard/dashboard'
     | '/_dashboard/inviting'
     | '/_dashboard/notifications'
     | '/_dashboard/parsing'
     | '/_dashboard/proxies'
+    | '/_dashboard/reactions'
+    | '/_dashboard/referral'
+    | '/_dashboard/schedule'
     | '/_dashboard/settings'
+    | '/_dashboard/storylooking'
+    | '/_dashboard/storytagger'
     | '/_dashboard/subscription'
     | '/_dashboard/tasks'
     | '/_dashboard/warming'
+    | '/_dashboard/admin/bot'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -260,11 +356,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardSubscriptionRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/storytagger': {
+      id: '/_dashboard/storytagger'
+      path: '/storytagger'
+      fullPath: '/storytagger'
+      preLoaderRoute: typeof DashboardStorytaggerRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/storylooking': {
+      id: '/_dashboard/storylooking'
+      path: '/storylooking'
+      fullPath: '/storylooking'
+      preLoaderRoute: typeof DashboardStorylookingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/settings': {
       id: '/_dashboard/settings'
       path: '/settings'
       fullPath: '/settings'
       preLoaderRoute: typeof DashboardSettingsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/schedule': {
+      id: '/_dashboard/schedule'
+      path: '/schedule'
+      fullPath: '/schedule'
+      preLoaderRoute: typeof DashboardScheduleRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/referral': {
+      id: '/_dashboard/referral'
+      path: '/referral'
+      fullPath: '/referral'
+      preLoaderRoute: typeof DashboardReferralRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/reactions': {
+      id: '/_dashboard/reactions'
+      path: '/reactions'
+      fullPath: '/reactions'
+      preLoaderRoute: typeof DashboardReactionsRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/proxies': {
@@ -309,6 +440,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardCommentingRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/chatting': {
+      id: '/_dashboard/chatting'
+      path: '/chatting'
+      fullPath: '/chatting'
+      preLoaderRoute: typeof DashboardChattingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/admin': {
+      id: '/_dashboard/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof DashboardAdminRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/accounts': {
       id: '/_dashboard/accounts'
       path: '/accounts'
@@ -316,18 +461,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardAccountsRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/admin/bot': {
+      id: '/_dashboard/admin/bot'
+      path: '/bot'
+      fullPath: '/admin/bot'
+      preLoaderRoute: typeof DashboardAdminBotRouteImport
+      parentRoute: typeof DashboardAdminRoute
+    }
   }
 }
 
+interface DashboardAdminRouteChildren {
+  DashboardAdminBotRoute: typeof DashboardAdminBotRoute
+}
+
+const DashboardAdminRouteChildren: DashboardAdminRouteChildren = {
+  DashboardAdminBotRoute: DashboardAdminBotRoute,
+}
+
+const DashboardAdminRouteWithChildren = DashboardAdminRoute._addFileChildren(
+  DashboardAdminRouteChildren,
+)
+
 interface DashboardRouteChildren {
   DashboardAccountsRoute: typeof DashboardAccountsRoute
+  DashboardAdminRoute: typeof DashboardAdminRouteWithChildren
+  DashboardChattingRoute: typeof DashboardChattingRoute
   DashboardCommentingRoute: typeof DashboardCommentingRoute
   DashboardDashboardRoute: typeof DashboardDashboardRoute
   DashboardInvitingRoute: typeof DashboardInvitingRoute
   DashboardNotificationsRoute: typeof DashboardNotificationsRoute
   DashboardParsingRoute: typeof DashboardParsingRoute
   DashboardProxiesRoute: typeof DashboardProxiesRoute
+  DashboardReactionsRoute: typeof DashboardReactionsRoute
+  DashboardReferralRoute: typeof DashboardReferralRoute
+  DashboardScheduleRoute: typeof DashboardScheduleRoute
   DashboardSettingsRoute: typeof DashboardSettingsRoute
+  DashboardStorylookingRoute: typeof DashboardStorylookingRoute
+  DashboardStorytaggerRoute: typeof DashboardStorytaggerRoute
   DashboardSubscriptionRoute: typeof DashboardSubscriptionRoute
   DashboardTasksRoute: typeof DashboardTasksRoute
   DashboardWarmingRoute: typeof DashboardWarmingRoute
@@ -335,13 +506,20 @@ interface DashboardRouteChildren {
 
 const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardAccountsRoute: DashboardAccountsRoute,
+  DashboardAdminRoute: DashboardAdminRouteWithChildren,
+  DashboardChattingRoute: DashboardChattingRoute,
   DashboardCommentingRoute: DashboardCommentingRoute,
   DashboardDashboardRoute: DashboardDashboardRoute,
   DashboardInvitingRoute: DashboardInvitingRoute,
   DashboardNotificationsRoute: DashboardNotificationsRoute,
   DashboardParsingRoute: DashboardParsingRoute,
   DashboardProxiesRoute: DashboardProxiesRoute,
+  DashboardReactionsRoute: DashboardReactionsRoute,
+  DashboardReferralRoute: DashboardReferralRoute,
+  DashboardScheduleRoute: DashboardScheduleRoute,
   DashboardSettingsRoute: DashboardSettingsRoute,
+  DashboardStorylookingRoute: DashboardStorylookingRoute,
+  DashboardStorytaggerRoute: DashboardStorytaggerRoute,
   DashboardSubscriptionRoute: DashboardSubscriptionRoute,
   DashboardTasksRoute: DashboardTasksRoute,
   DashboardWarmingRoute: DashboardWarmingRoute,

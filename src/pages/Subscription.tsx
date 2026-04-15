@@ -281,7 +281,7 @@ const Subscription = () => {
       {/* Contact support note */}
       <button
         className="panel-card p-4 flex items-center gap-3 border-border/50 w-full text-left hover:border-primary/30 transition-colors"
-        onClick={() => navigate({ to: "/payment" })}
+        onClick={() => navigate({ to: "/payment" as any })}
       >
         <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
           <Crown className="h-4 w-4 text-primary" />
