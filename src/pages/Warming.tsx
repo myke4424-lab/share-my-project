@@ -694,7 +694,7 @@ const Warming = () => {
                 className="w-full bg-muted/20 border border-border/50 rounded-lg px-3 py-2 text-xs text-foreground resize-none focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
-            <Button variant="outline" size="sm" className="text-xs gap-1.5 w-full h-9" onClick={saveSettings}>
+            <Button variant="outline" size="sm" className="text-xs gap-1.5 w-full h-9" onClick={() => saveSettings()}>
               <RotateCcw className="h-3 w-3" /> Сохранить настройки
             </Button>
           </div>
