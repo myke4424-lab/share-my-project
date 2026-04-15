@@ -41,6 +41,7 @@ interface UploadedAccount {
 }
 
 interface PoolProxy {
+  id?: number;
   line: string;
   status: "none" | "checking" | "ok" | "slow" | "error";
   latency?: number;

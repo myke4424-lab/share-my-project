@@ -396,7 +396,7 @@ const Inviting = () => {
           {sourceTab === "parsed" && (
             <ParsedResultSelector
               importEndpoint="/api/tools/inviting/import-from-library"
-              onImported={(count) => {
+              onImported={(count: number) => {
                 setInQueue(count); setUploadedCount(count);
                 toast({ title: `Загружено ${count} пользователей из библиотеки` });
               }}
