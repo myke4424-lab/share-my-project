@@ -57,7 +57,7 @@ const PLAN_NAMES: Record<string, string> = {
 };
 
 export default function Payment() {
-  const [params] = URLSearchParams();
+  const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   const navigate = useNavigate();
   const [selected, setSelected] = useState<string | null>(null);
   const [done, setDone] = useState(false);
