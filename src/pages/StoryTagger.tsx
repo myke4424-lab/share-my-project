@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Camera, Upload, Clock, Users, Play, Square, Link as LinkIcon } from "lucide-react";
+import { Camera, Upload, Clock, Users, Play, Square, Link2 } from "lucide-react";
 import ToolHeader from "@/components/dashboard/ToolHeader";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
@@ -244,7 +244,7 @@ const StoryTagger = () => {
             <div className="space-y-3">
               <div className="space-y-1">
                 <label className="text-xs text-muted-foreground flex items-center gap-1">
-                  <LinkIcon className="h-3 w-3" /> Ссылка на историю (t.me/...)
+                  <Link2 className="h-3 w-3" /> Ссылка на историю (t.me/...)
                 </label>
                 <Input
                   placeholder="https://t.me/c/123456/789"
