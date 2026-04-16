@@ -244,7 +244,7 @@ const StoryTagger = () => {
             <div className="space-y-3">
               <div className="space-y-1">
                 <label className="text-xs text-muted-foreground flex items-center gap-1">
-                  <LinkIcon className="h-3 w-3" /> Ссылка на историю (t.me/...)
+                  <Link2 className="h-3 w-3" /> Ссылка на историю (t.me/...)
                 </label>
                 <Input
                   placeholder="https://t.me/c/123456/789"
