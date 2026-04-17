@@ -46,8 +46,8 @@ const StatsSection = () => {
     },
     {
       icon: Shield,
-      value: "95",
-      label: "Процентов аккаунтов выживают первый месяц",
+      value: "95%",
+      label: "Аккаунтов выживают первый месяц работы",
       sub: "survival.rate",
       delta: "vs 38% рынок",
     },
