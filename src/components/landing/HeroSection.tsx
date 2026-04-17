@@ -1,111 +1,239 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Shield, Bot, TrendingUp, Users, MessageSquare, Activity } from "lucide-react";
+import { ArrowRight, Play, Send, Users, Sparkles, CheckCircle2 } from "lucide-react";
 
-const CARDS = [
-  { icon: Users, color: "text-blue-400", bg: "bg-blue-500/10", label: "Инвайтинг", value: "156", unit: "приглашений", delay: 0 },
-  { icon: Bot, color: "text-violet-400", bg: "bg-violet-500/10", label: "Нейрокомментинг", value: "24", unit: "комментария", delay: 0.12 },
-  { icon: TrendingUp, color: "text-amber-400", bg: "bg-amber-500/10", label: "Trust Score", value: "82%", unit: "+4% сегодня", delay: 0.24 },
-  { icon: MessageSquare, color: "text-emerald-400", bg: "bg-emerald-500/10", label: "Прогрев #A-07", value: "День 7", unit: "из 14", delay: 0.36 },
+const LIVE_FEED = [
+  { time: "00:12", action: "Инвайт", target: "@crypto_arb_chat", count: "+47", color: "text-sky-400" },
+  { time: "00:09", action: "AI-комментарий", target: "@marketing_pro", count: "1", color: "text-violet-400" },
+  { time: "00:06", action: "Прогрев аккаунта", target: "A-2841", count: "день 7/14", color: "text-emerald-400" },
+  { time: "00:03", action: "Парсинг", target: "@traffic_chat", count: "1 240", color: "text-amber-400" },
+  { time: "00:01", action: "Инвайт", target: "@smm_lab", count: "+62", color: "text-sky-400" },
 ];
 
-const PILLS = [
-  { icon: Bot, label: "AI-комментинг" },
-  { icon: Zap, label: "Авто-прогрев" },
-  { icon: Shield, label: "Анти-спамблок" },
+const METRICS = [
+  { label: "Аккаунтов в работе", value: "1 284", trend: "+12%" },
+  { label: "Действий за час", value: "8 940", trend: "live" },
+  { label: "Конверсия в подписку", value: "14.2%", trend: "+3.1%" },
 ];
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-24 pb-16 overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.035]" style={{ backgroundImage: "radial-gradient(var(--color-foreground) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
-      <motion.div className="absolute -top-16 -left-48 w-[520px] h-[520px] rounded-full bg-primary/10 blur-3xl" animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }} transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }} />
-      <motion.div className="absolute top-1/2 -right-40 w-[400px] h-[400px] rounded-full bg-violet-500/8 blur-3xl" animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 3 }} />
+    <section className="relative pt-28 pb-20 overflow-hidden bg-background">
+      {/* background — subtle telegram-blue ambient */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(var(--color-foreground) 1px, transparent 1px), linear-gradient(90deg, var(--color-foreground) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
+        <motion.div
+          className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full blur-3xl"
+          style={{ background: "radial-gradient(closest-side, oklch(0.66 0.214 259.1 / 0.18), transparent)" }}
+          animate={{ opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-7">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-                <motion.span animate={{ rotate: [0, 15, -10, 0] }} transition={{ duration: 2.5, repeat: Infinity }}>🚀</motion.span>
-                Платформа нового поколения
-              </span>
-            </motion.div>
+        {/* status bar */}
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto mb-10 flex w-fit items-center gap-3 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-xs"
+        >
+          <span className="flex items-center gap-1.5">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            <span className="font-medium text-foreground">Платформа в работе</span>
+          </span>
+          <span className="h-3 w-px bg-border" />
+          <span className="text-muted-foreground tabular-nums">1 284 аккаунта · 8 940 действий/час</span>
+        </motion.div>
 
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} className="text-[2.6rem] sm:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight">
-              Автоматизируй<br />
-              <span className="text-gradient">продвижение</span><br />
-              в Telegram
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* LEFT */}
+          <div className="lg:col-span-6">
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[2.75rem] sm:text-6xl lg:text-[4.25rem] font-black leading-[1.02] tracking-[-0.03em] text-foreground"
+            >
+              Telegram-маркетинг
+              <br />
+              <span className="relative inline-block">
+                <span className="text-gradient">на автопилоте</span>
+                <motion.span
+                  className="absolute -bottom-2 left-0 h-[3px] w-full rounded-full bg-primary/70"
+                  initial={{ scaleX: 0, originX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.7, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                />
+              </span>
             </motion.h1>
 
-            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.7 }} className="mt-5 text-base text-muted-foreground max-w-md leading-relaxed">
-              Единая панель для инвайтинга, прогрева, парсинга и нейрокомментинга. Запустите первую кампанию за 10 минут — без ручной работы.
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed"
+            >
+              Прогревайте аккаунты, парсите аудиторию, инвайтите и комментируйте через ИИ — <span className="text-foreground font-semibold">в одной панели</span>. Запуск воронки — 10 минут, без ручной работы и спам-блоков.
             </motion.p>
 
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38, duration: 0.6 }} className="mt-8 flex flex-wrap gap-3">
-              <Button size="lg" className="rounded-full px-7 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold gap-2 h-12">
-                Начать бесплатно
-                <motion.span animate={{ x: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity }}><ArrowRight size={17} /></motion.span>
+            {/* trust row */}
+            <motion.ul
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.35, duration: 0.5 }}
+              className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground"
+            >
+              {["Без банов до 95%", "16 инструментов", "Старт за 10 минут"].map((t) => (
+                <li key={t} className="flex items-center gap-1.5">
+                  <CheckCircle2 size={15} className="text-primary" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </motion.ul>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45, duration: 0.5 }}
+              className="mt-9 flex flex-wrap items-center gap-3"
+            >
+              <Button size="lg" className="group rounded-full px-7 h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold gap-2 shadow-lg shadow-primary/25">
+                Запустить бесплатно
+                <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-7 h-12 font-semibold border-border/60">
-                Посмотреть тарифы
+              <Button size="lg" variant="ghost" className="rounded-full px-5 h-12 font-semibold gap-2 text-foreground hover:bg-muted">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Play size={12} fill="currentColor" />
+                </span>
+                Демо за 90 секунд
               </Button>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }} className="mt-8 space-y-4">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <div className="flex -space-x-2">
-                  {["АК", "ДВ", "ЕМ", "МЛ"].map((a, i) => (
-                    <motion.div key={i} initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.65 + i * 0.08, type: "spring", stiffness: 280 }} className="w-7 h-7 rounded-full bg-primary/15 border-2 border-background flex items-center justify-center text-[9px] font-bold text-primary">
-                      {a}
-                    </motion.div>
-                  ))}
-                </div>
-                <span>Нам доверяют 200+ команд</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {PILLS.map((p, i) => (
-                  <motion.div key={p.label} initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.7 + i * 0.1, type: "spring", stiffness: 200 }} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card border border-border text-xs font-medium text-foreground">
-                    <p.icon size={12} className="text-primary" />
-                    {p.label}
-                  </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="mt-7 flex items-center gap-3 text-xs text-muted-foreground"
+            >
+              <div className="flex -space-x-2">
+                {["АК", "ДВ", "ЕМ", "МЛ", "СР"].map((a, i) => (
+                  <div key={i} className="w-7 h-7 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-background flex items-center justify-center text-[9px] font-bold text-primary">
+                    {a}
+                  </div>
                 ))}
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="text-foreground font-semibold">200+ команд</span>
+                <span>уже автоматизировали Telegram</span>
               </div>
             </motion.div>
           </div>
 
-          <div className="relative hidden lg:block">
-            <div className="absolute left-7 top-6 bottom-6 w-px bg-gradient-to-b from-transparent via-border/60 to-transparent" />
-            <div className="space-y-3 pl-4">
-              {CARDS.map((card) => {
-                const Icon = card.icon;
-                return (
-                  <motion.div key={card.label} initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: card.delay + 0.5, duration: 0.55, ease: [0.16, 1, 0.3, 1] }} whileHover={{ x: 4, transition: { duration: 0.15 } }} className="relative flex items-center gap-4 bg-card border border-border rounded-xl px-4 py-4 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 transition-all cursor-default">
-                    <div className="absolute -left-[1.45rem] w-3 h-3 rounded-full border-2 border-background bg-primary/80 shrink-0" />
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${card.bg}`}>
-                      <Icon size={19} className={card.color} />
+          {/* RIGHT — live ops console */}
+          <div className="lg:col-span-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="relative"
+            >
+              {/* glow */}
+              <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-primary/20 via-primary/5 to-transparent blur-2xl" />
+
+              <div className="relative rounded-2xl border border-border bg-card/80 backdrop-blur-xl shadow-2xl shadow-primary/10 overflow-hidden">
+                {/* console header */}
+                <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-400/70" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/70" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs text-muted-foreground font-medium">{card.label}</p>
-                      <p className="text-lg font-black text-foreground leading-tight">{card.value}
-                        <span className="text-xs font-normal text-muted-foreground ml-1.5">{card.unit}</span>
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-1.5 shrink-0">
-                      <motion.span className="w-1.5 h-1.5 rounded-full bg-emerald-400" animate={{ scale: [1, 1.6, 1], opacity: [1, 0.5, 1] }} transition={{ duration: 2, repeat: Infinity, delay: card.delay }} />
-                      <span className="text-[10px] text-emerald-500 font-semibold">live</span>
-                    </div>
-                  </motion.div>
-                );
-              })}
-              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.0, duration: 0.5 }} className="ml-4 flex items-center justify-between rounded-xl bg-primary/8 border border-primary/15 px-4 py-3">
-                <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                  <Activity size={15} />
-                  4 инструмента активны
+                    <span className="ml-2 text-xs font-semibold text-foreground tracking-wide">teleboost · live ops</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-muted-foreground">UTC 14:32:08</span>
                 </div>
-                <span className="text-xs text-muted-foreground">прямо сейчас</span>
+
+                {/* metrics */}
+                <div className="grid grid-cols-3 divide-x divide-border border-b border-border">
+                  {METRICS.map((m, i) => (
+                    <motion.div
+                      key={m.label}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 + i * 0.1 }}
+                      className="px-4 py-4"
+                    >
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">{m.label}</p>
+                      <p className="mt-1 text-xl font-black tabular-nums text-foreground">{m.value}</p>
+                      <p className="text-[10px] font-semibold text-emerald-500 mt-0.5">{m.trend}</p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* live feed */}
+                <div className="px-4 py-3">
+                  <div className="flex items-center justify-between mb-2.5">
+                    <p className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold flex items-center gap-1.5">
+                      <Sparkles size={11} className="text-primary" />
+                      Поток событий
+                    </p>
+                    <span className="text-[10px] text-muted-foreground">за последнюю минуту</span>
+                  </div>
+                  <div className="space-y-1.5">
+                    {LIVE_FEED.map((e, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.7 + i * 0.08, duration: 0.4 }}
+                        className="flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-muted/50 transition-colors text-xs"
+                      >
+                        <span className="font-mono text-[10px] text-muted-foreground tabular-nums w-9">{e.time}</span>
+                        <span className={`w-1.5 h-1.5 rounded-full ${e.color.replace("text-", "bg-")} shrink-0`} />
+                        <span className={`font-semibold ${e.color} w-32 shrink-0`}>{e.action}</span>
+                        <span className="font-mono text-[11px] text-foreground/80 truncate flex-1">{e.target}</span>
+                        <span className="font-bold text-foreground tabular-nums text-[11px]">{e.count}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* footer cta inside console */}
+                <div className="flex items-center justify-between gap-3 px-4 py-3 border-t border-border bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5">
+                  <div className="flex items-center gap-2 text-xs">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-md bg-primary/15 text-primary">
+                      <Send size={12} />
+                    </span>
+                    <span className="text-foreground font-semibold">Следующая кампания</span>
+                    <span className="text-muted-foreground">через 03:42</span>
+                  </div>
+                  <span className="flex items-center gap-1 text-[10px] font-bold text-primary uppercase tracking-wider">
+                    <Users size={10} /> авто
+                  </span>
+                </div>
+              </div>
+
+              {/* floating badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.1, type: "spring", stiffness: 200 }}
+                className="absolute -bottom-4 -left-4 hidden sm:flex items-center gap-2 rounded-full bg-background border border-border shadow-xl px-3.5 py-2"
+              >
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/15">
+                  <CheckCircle2 size={13} className="text-emerald-500" />
+                </div>
+                <div className="leading-tight">
+                  <p className="text-[10px] text-muted-foreground">Защита от блока</p>
+                  <p className="text-xs font-bold text-foreground">95% выживаемость</p>
+                </div>
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
