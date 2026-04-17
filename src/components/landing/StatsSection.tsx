@@ -31,32 +31,32 @@ const StatsSection = () => {
 
   const stats = [
     {
-      icon: Zap,
-      value: t("stats.s1.val"),
-      label: t("stats.s1.label"),
-      sub: "modules.active",
-      delta: "+3 new",
-    },
-    {
       icon: TrendingUp,
-      value: t("stats.s2.val"),
-      label: t("stats.s2.label"),
-      sub: "leads.total",
-      delta: "↑ 24% MoM",
+      value: "2.4M",
+      label: "Лидов привлечено клиентами за 2024 год",
+      sub: "leads.generated",
+      delta: "↑ 312% YoY",
     },
     {
-      icon: Activity,
-      value: t("stats.s3.val"),
-      label: t("stats.s3.label"),
-      sub: "setup.time",
-      delta: "avg",
+      icon: Zap,
+      value: "8940",
+      label: "Действий в час на одном аккаунте без блокировок",
+      sub: "actions.per_hour",
+      delta: "× 47 быстрее",
     },
     {
       icon: Shield,
-      value: t("stats.s4.val"),
-      label: t("stats.s4.label"),
-      sub: "uptime.sla",
-      delta: "99.97%",
+      value: "95",
+      label: "Процентов аккаунтов выживают первый месяц",
+      sub: "survival.rate",
+      delta: "vs 38% рынок",
+    },
+    {
+      icon: Activity,
+      value: "11",
+      label: "Минут от регистрации до первой кампании",
+      sub: "time.to.value",
+      delta: "без кода",
     },
   ];
 
