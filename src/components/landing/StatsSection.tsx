@@ -80,13 +80,13 @@ const StatsSection = () => {
         >
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-card border border-border/60 font-mono text-[11px] text-muted-foreground">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span>system.metrics</span>
+            <span>результаты_клиентов.live</span>
             <span className="text-border">|</span>
-            <span className="text-foreground/70">live</span>
+            <span className="text-foreground/70">не_кейсы_из_2019</span>
           </div>
           <div className="flex-1 h-px bg-gradient-to-r from-border/60 to-transparent" />
           <span className="font-mono text-[11px] text-muted-foreground hidden sm:inline">
-            updated · just now
+            данные за 30 дней · обновлено 2 мин назад
           </span>
         </motion.div>
 
