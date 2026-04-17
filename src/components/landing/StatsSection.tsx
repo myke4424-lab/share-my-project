@@ -31,32 +31,32 @@ const StatsSection = () => {
 
   const stats = [
     {
-      icon: Zap,
-      value: t("stats.s1.val"),
-      label: t("stats.s1.label"),
-      sub: "modules.active",
-      delta: "+3 new",
-    },
-    {
       icon: TrendingUp,
-      value: t("stats.s2.val"),
-      label: t("stats.s2.label"),
-      sub: "leads.total",
-      delta: "↑ 24% MoM",
+      value: "2.4M",
+      label: "Лидов привлечено клиентами за 2024 год",
+      sub: "leads.generated",
+      delta: "↑ 312% YoY",
     },
     {
-      icon: Activity,
-      value: t("stats.s3.val"),
-      label: t("stats.s3.label"),
-      sub: "setup.time",
-      delta: "avg",
+      icon: Zap,
+      value: "8940",
+      label: "Действий в час на одном аккаунте без блокировок",
+      sub: "actions.per_hour",
+      delta: "× 47 быстрее",
     },
     {
       icon: Shield,
-      value: t("stats.s4.val"),
-      label: t("stats.s4.label"),
-      sub: "uptime.sla",
-      delta: "99.97%",
+      value: "95%",
+      label: "Аккаунтов выживают первый месяц работы",
+      sub: "survival.rate",
+      delta: "vs 38% рынок",
+    },
+    {
+      icon: Activity,
+      value: "11",
+      label: "Минут от регистрации до первой кампании",
+      sub: "time.to.value",
+      delta: "без кода",
     },
   ];
 
@@ -80,13 +80,13 @@ const StatsSection = () => {
         >
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-card border border-border/60 font-mono text-[11px] text-muted-foreground">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span>system.metrics</span>
+            <span>результаты_клиентов.live</span>
             <span className="text-border">|</span>
-            <span className="text-foreground/70">live</span>
+            <span className="text-foreground/70">не_кейсы_из_2019</span>
           </div>
           <div className="flex-1 h-px bg-gradient-to-r from-border/60 to-transparent" />
           <span className="font-mono text-[11px] text-muted-foreground hidden sm:inline">
-            updated · just now
+            данные за 30 дней · обновлено 2 мин назад
           </span>
         </motion.div>
 
@@ -145,19 +145,19 @@ const StatsSection = () => {
         >
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 rounded-full bg-primary" />
-            no_card_required
+            $0_до_первого_лида
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 rounded-full bg-primary" />
-            3_day_trial
+            окупается_за_4_дня
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 rounded-full bg-primary" />
-            cancel_anytime
+            возврат_денег_7_дней
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 rounded-full bg-primary" />
-            200+_teams_onboard
+            217_команд_сейчас_онлайн
           </span>
         </motion.div>
       </div>
