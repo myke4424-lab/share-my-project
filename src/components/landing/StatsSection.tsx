@@ -145,19 +145,19 @@ const StatsSection = () => {
         >
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 rounded-full bg-primary" />
-            no_card_required
+            $0_до_первого_лида
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 rounded-full bg-primary" />
-            3_day_trial
+            окупается_за_4_дня
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 rounded-full bg-primary" />
-            cancel_anytime
+            возврат_денег_7_дней
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 rounded-full bg-primary" />
-            200+_teams_onboard
+            217_команд_сейчас_онлайн
           </span>
         </motion.div>
       </div>
